@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv add:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run python:*)",
+      "WebFetch(domain:partners.coupang.com)",
+      "Bash(del test_category_api.py)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
