@@ -463,19 +463,22 @@ async def cleanup():
 
 def main():
     """Main entry point for the MCP server."""
-    import mcp.server.stdio
-
     logger.info("Starting Coupang MCP Server...")
-
-    # Run server with stdio transport
+    
+    # Run server
+    async def run():
+        from mcp.server.stdio import stdio_server
+        async with stdio_server() as (read_stream, write_stream):
+            await app.run(
+                read_stream,
+                write_stream,
+                app.create_initialization_options()
+            )
+    
     try:
-        asyncio.run(mcp.server.stdio.stdio_server(app))
+        asyncio.run(run())
     except KeyboardInterrupt:
         logger.info("Server stopped by user")
-    finally:
-        # Cleanup
-        if client:
-            asyncio.run(cleanup())
 
 
 if __name__ == "__main__":

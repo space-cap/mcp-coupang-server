@@ -5,7 +5,9 @@
       "Bash(uv run pytest:*)",
       "Bash(uv run python:*)",
       "WebFetch(domain:partners.coupang.com)",
-      "Bash(del test_category_api.py)"
+      "Bash(del test_category_api.py)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

@@ -38,3 +38,27 @@ htmlcov/
 
 # MCP specific
 mcp-inspector/
+
+# Test/Debug files
+test_*.py
+debug_*.py
+*.tmp
+
+# UV package manager
+.python-version
+
+# Jupyter (keep notebooks but ignore checkpoints)
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Data files (only ignore data directory contents, not config files)
+data/
+*.csv
+# Keep JSON config files but ignore data JSON
+!pyproject.json
+!package.json
+!tsconfig.json
+!*config*.json
+
+# Sample/Example files (keep in repo but ignore local modifications)
+sample/*.local.*
