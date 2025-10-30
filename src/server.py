@@ -60,24 +60,24 @@ async def list_tools() -> list[Tool]:
                 "required": ["keyword"]
             }
         ),
-        Tool(
-            name="get_product_details",
-            description=(
-                "Get detailed information about a specific Coupang product by ID. "
-                "Returns product name, price, images, category, shipping info, and affiliate URL. "
-                "Use this after searching to get more details about a particular product."
-            ),
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "product_id": {
-                        "type": "string",
-                        "description": "Coupang product ID (obtained from search results)"
-                    }
-                },
-                "required": ["product_id"]
-            }
-        ),
+        # Tool(
+        #     name="get_product_details",
+        #     description=(
+        #         "Get detailed information about a specific Coupang product by ID. "
+        #         "Returns product name, price, images, category, shipping info, and affiliate URL. "
+        #         "Use this after searching to get more details about a particular product."
+        #     ),
+        #     inputSchema={
+        #         "type": "object",
+        #         "properties": {
+        #             "product_id": {
+        #                 "type": "string",
+        #                 "description": "Coupang product ID (obtained from search results)"
+        #             }
+        #         },
+        #         "required": ["product_id"]
+        #     }
+        # ),
         Tool(
             name="get_best_products_by_category",
             description=(
@@ -158,8 +158,8 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
     try:
         if name == "search_products":
             return await handle_search_products(arguments)
-        elif name == "get_product_details":
-            return await handle_get_product_details(arguments)
+        # elif name == "get_product_details":
+        #     return await handle_get_product_details(arguments)
         elif name == "get_best_products_by_category":
             return await handle_get_best_products_by_category(arguments)
         elif name == "create_deeplinks":
