@@ -19,22 +19,33 @@ MCP (Model Context Protocol) 서버로 Claude AI가 쿠팡 제휴 API를 사용�
 
 ## 설치
 
-### 1. 저장소 클론
+### 빠른 시작
 
 ```bash
-git clone <repository-url>
+# 1. 저장소 클론
+git clone https://github.com/space-cap/mcp-coupang-server.git
 cd mcp-coupang-server
-```
 
-### 2. 의존성 설치
-
-```bash
+# 2. 의존성 설치
 uv sync
+
+# 3. 환경 변수 설정
+# .env 파일을 생성하고 쿠팡 API 키를 입력하세요
 ```
 
-### 3. 환경 변수 설정
+### 상세 설치 가이드
 
-`.env` 파일을 생성하고 쿠팡 API 자격증명을 입력하세요:
+처음 설치하시나요? **[📖 설치 및 설정 가이드](docs/installation-guide.md)**를 참조하세요.
+
+이 가이드는 다음 내용을 포함합니다:
+- Python 및 UV 설치 방법
+- 쿠팡 파트너스 API 키 발급 절차
+- Claude Desktop 설정 방법 (Windows/macOS/Linux)
+- 문제 해결 및 테스트 방법
+
+### 환경 변수
+
+`.env` 파일 예제:
 
 ```env
 COUPANG_ACCESS_KEY=your_access_key_here
@@ -42,11 +53,6 @@ COUPANG_SECRET_KEY=your_secret_key_here
 COUPANG_PARTNER_ID=your_partner_id_here
 COUPANG_SUB_ID=your_sub_id_here  # Optional: Default tracking ID for deeplinks
 ```
-
-**쿠팡 파트너스 자격증명 발급 방법:**
-1. [쿠팡 파트너스](https://partners.coupang.com)에 가입
-2. API 신청 및 승인 받기
-3. Access Key, Secret Key, Partner ID 발급
 
 ## 사용 방법
 
@@ -272,6 +278,16 @@ mcp-coupang-server/
 ├── pyproject.toml             # 프로젝트 설정
 └── pytest.ini                 # 테스트 설정
 ```
+
+## 배포
+
+다른 사람들이 사용할 수 있도록 배포하고 싶으신가요? **[🚀 배포 가이드](docs/deployment-guide.md)**를 참조하세요.
+
+배포 방법:
+- GitHub 공개 저장소 (가장 쉬움, 권장)
+- PyPI 패키지 배포
+- Docker 컨테이너
+- MCP Registry 등록
 
 ## 개발
 
