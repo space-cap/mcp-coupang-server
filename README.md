@@ -317,7 +317,11 @@ uv run pytest --cov=src --cov-report=html
 
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스 하에 배포됩니다.
+이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+
+```
+MIT License - Copyright (c) 2025 space-cap
+```
 
 ## 기여하기
 

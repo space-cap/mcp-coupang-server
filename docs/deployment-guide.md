@@ -298,17 +298,77 @@ pip install coupang-mcp-server==1.0.0
 
 ### 2.4 Claude Desktop 설정 (PyPI 버전)
 
+PyPI로 설치한 경우에도 **환경 변수 설정이 필요**합니다.
+
+#### 방법 1: 시스템 환경 변수 설정 (권장)
+
+**Windows:**
+```powershell
+# 시스템 환경 변수 설정
+[System.Environment]::SetEnvironmentVariable("COUPANG_ACCESS_KEY", "your_access_key", "User")
+[System.Environment]::SetEnvironmentVariable("COUPANG_SECRET_KEY", "your_secret_key", "User")
+[System.Environment]::SetEnvironmentVariable("COUPANG_PARTNER_ID", "your_partner_id", "User")
+[System.Environment]::SetEnvironmentVariable("COUPANG_SUB_ID", "your_sub_id", "User")
+
+# 또는 GUI로: 시스템 속성 → 고급 → 환경 변수
+```
+
+**macOS/Linux:**
+```bash
+# ~/.bashrc 또는 ~/.zshrc에 추가
+export COUPANG_ACCESS_KEY="your_access_key"
+export COUPANG_SECRET_KEY="your_secret_key"
+export COUPANG_PARTNER_ID="your_partner_id"
+export COUPANG_SUB_ID="your_sub_id"
+
+# 적용
+source ~/.bashrc  # 또는 source ~/.zshrc
+```
+
+#### 방법 2: Claude Desktop 설정에서 환경 변수 지정
+
 ```json
 {
   "mcpServers": {
     "coupang": {
-      "command": "coupang-mcp-server"
+      "command": "coupang-mcp-server",
+      "env": {
+        "COUPANG_ACCESS_KEY": "your_access_key_here",
+        "COUPANG_SECRET_KEY": "your_secret_key_here",
+        "COUPANG_PARTNER_ID": "your_partner_id_here",
+        "COUPANG_SUB_ID": "your_sub_id_here"
+      }
     }
   }
 }
 ```
 
-**주의**: 환경 변수는 여전히 사용자가 직접 설정해야 합니다.
+⚠️ **보안 주의**: 이 방법은 API 키가 설정 파일에 평문으로 저장되므로 주의가 필요합니다.
+
+#### 방법 3: .env 파일 사용 (Git 클론 방식과 동일)
+
+특정 디렉토리에 `.env` 파일을 만들고 Claude Desktop 설정에서 경로 지정:
+
+```json
+{
+  "mcpServers": {
+    "coupang": {
+      "command": "coupang-mcp-server",
+      "cwd": "/path/to/your/.env/directory"
+    }
+  }
+}
+```
+
+`.env` 파일 내용:
+```env
+COUPANG_ACCESS_KEY=your_access_key
+COUPANG_SECRET_KEY=your_secret_key
+COUPANG_PARTNER_ID=your_partner_id
+COUPANG_SUB_ID=your_sub_id
+```
+
+**권장 방법**: 시스템 환경 변수 (방법 1)가 가장 안전하고 편리합니다.
 
 ---
 

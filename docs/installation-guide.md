@@ -223,6 +223,11 @@ C:\Users\사용자이름\AppData\Roaming\Claude\claude_desktop_config.json
 ~/.config/Claude/claude_desktop_config.json
 ```
 
+### 중요: 환경 변수가 필요합니다
+
+Claude Desktop 설정 전에 **반드시** 환경 변수를 설정해야 합니다.
+위의 [환경 변수 설정](#환경-변수-설정) 섹션을 먼저 완료하세요.
+
 ### 설정 파일 수정
 
 #### 1. 설정 파일 열기
