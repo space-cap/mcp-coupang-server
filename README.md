@@ -19,7 +19,24 @@ MCP (Model Context Protocol) 서버로 Claude AI가 쿠팡 제휴 API를 사용�
 
 ## 설치
 
-### 빠른 시작
+### 방법 1: PyPI 패키지 설치 (권장) ⭐
+
+가장 간단한 방법입니다. 한 줄로 설치하고 Claude Desktop에서 바로 사용할 수 있습니다.
+
+```bash
+pip install mcp-coupang-server
+```
+
+**[📦 PyPI 설치 가이드](docs/pypi-installation-guide.md)**를 참조하세요.
+
+이 가이드는 다음 내용을 포함합니다:
+- PyPI 패키지 설치 방법
+- Claude Desktop 설정 (환경 변수 포함)
+- 문제 해결 및 업데이트 방법
+
+### 방법 2: Git Clone (개발자용)
+
+소스 코드를 직접 수정하거나 기여하고 싶다면 이 방법을 사용하세요.
 
 ```bash
 # 1. 저장소 클론
@@ -33,9 +50,7 @@ uv sync
 # .env 파일을 생성하고 쿠팡 API 키를 입력하세요
 ```
 
-### 상세 설치 가이드
-
-처음 설치하시나요? **[📖 설치 및 설정 가이드](docs/installation-guide.md)**를 참조하세요.
+**[📖 Git Clone 설치 가이드](docs/installation-guide.md)**를 참조하세요.
 
 이 가이드는 다음 내용을 포함합니다:
 - Python 및 UV 설치 방법
